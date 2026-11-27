@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Send an appointment request to Hoor Beauty Center in Jeddah or Buraidah.">
+<meta name="theme-color" content="#4b1838">
+<title>Appointment Request | Hoor Beauty Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#4b1838;--berry:#762b58;--purple:#76518f;--gold:#c7a66a;--cream:#fbf6f2;--ink:#342631}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Cairo',Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.8}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:7px;padding:12px;background:var(--wine)}
+nav a{color:white;text-decoration:none;padding:7px 12px;border-radius:25px;transition:.3s}
+nav a:hover,nav a[aria-current=page]{background:var(--purple)}
+nav .language{border:1px solid var(--gold);color:#f5dfb5}
+header{text-align:center;padding:55px 20px;color:white;background:linear-gradient(120deg,#301027e8,#762b58c9),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1500') center/cover}
+header h1{font-size:clamp(30px,5vw,44px);margin:0}
+header p{max-width:680px;margin:10px auto}
+main{width:min(850px,92%);margin:38px auto}
+.panel{background:white;padding:30px;border:1px solid #eadde4;border-radius:20px;box-shadow:0 12px 32px #4b183811}
+h2{color:var(--wine)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;color:var(--wine)}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d9c8d2;border-radius:10px;background:#fffdfd;font:inherit;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--purple);border-color:var(--purple)}
+textarea{min-height:110px;resize:vertical}
+button{grid-column:1/-1;padding:13px;border:0;border-radius:30px;background:var(--wine);color:white;font:inherit;font-weight:800;cursor:pointer;transition:.3s}
+button:hover{background:var(--purple);transform:translateY(-2px)}
+.note{margin-top:20px;padding:14px;background:#fbf6ed;border-left:4px solid var(--gold);border-radius:10px;font-size:14px}
+footer{margin-top:40px;padding:24px;text-align:center;background:var(--wine);color:white}
+footer a{color:#f5dfb5}
+@media(max-width:650px){nav{gap:3px}nav a{font-size:12px;padding:6px 8px}form{grid-template-columns:1fr}.field.full,button{grid-column:auto}.panel{padding:20px 15px}}
+</style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+<a href="index-en.html">Home</a>
+<a href="about-en.html">About Us</a>
+<a href="videos-en.html">Videos</a>
+<a href="register-en.html" aria-current="page">Appointment</a>
+<a href="contact-en.html">Contact</a>
+<a class="language" href="register.html" lang="ar">العربية</a>
+</nav>
+
+<header>
+<h1>Request an Appointment</h1>
+<p>Tell us what you are looking for. Our team will receive your request through WhatsApp.</p>
+</header>
+
+<main>
+<section class="panel">
+<h2>Appointment Details</h2>
+<p>Please complete the form below. Fields marked with * are required.</p>
+
+<form id="appointmentForm">
+<div class="field">
+<label for="fullName">Full Name *</label>
+<input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="80" placeholder="Enter your full name">
+</div>
+
+<div class="field">
+<label for="phone">Phone Number *</label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="Your phone number">
+</div>
+
+<div class="field">
+<label for="email">Email Address (Optional)</label>
+<input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+</div>
+
+<div class="field">
+<label for="branch">Choose a Branch *</label>
+<select id="branch" name="branch" required>
+<option value="">Select a branch</option>
+<option value="Jeddah – Al Safa District">Jeddah – Al Safa District</option>
+<option value="Buraidah – Al Khaleej District">Buraidah – Al Khaleej District</option>
+</select>
+</div>
+
+<div class="field">
+<label for="date">Preferred Date *</label>
+<input id="date" name="date" type="date" required>
+</div>
+
+<div class="field">
+<label for="service">Preferred Service *</label>
+<select id="service" name="service" required>
+<option value="">Choose a service</option>
+<option>Skin Care Consultation</option>
+<option>Skin Cleansing</option>
+<option>Hydration Treatment</option>
+<option>Dermapen</option>
+<option>Laser Treatment Inquiry</option>
+<option>Filler Consultation</option>
+<option>Botox Consultation</option>
+<option>Massage and Relaxation</option>
+<option>Other / Not Sure Yet</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="notes">Additional Notes (Optional)</label>
+<textarea id="notes" name="notes" maxlength="500" placeholder="Write any questions or additional details..."></textarea>
+</div>
+
+<button type="submit">Send Request via WhatsApp</button>
+</form>
+
+<p class="note">
+<strong>Please note:</strong> This form sends an appointment request through WhatsApp. It does not create an automatic or confirmed booking, and the information is not stored on this website. Your appointment is subject to confirmation by the center.
+</p>
+</section>
+</main>
+
+<footer>
+<p><strong>Hoor Beauty Center</strong></p>
+<p>© 2026 All Rights Reserved</p>
+<p><a href="contact-en.html">Contact Us</a></p>
+</footer>
+
+<script>
+const dateInput = document.getElementById('date');
+
+function getLocalDateString(){
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth()+1).padStart(2,'0');
+  const day = String(now.getDate()).padStart(2,'0');
+  return `${year}-${month}-${day}`;
+}
+
+dateInput.min = getLocalDateString();
+
+document.getElementById('appointmentForm').addEventListener('submit', function(event){
+  event.preventDefault();
+
+  if(!this.reportValidity()) return;
+
+  const data = new FormData(this);
+  const message = [
+    'Hello Hoor Beauty Center, I would like to request an appointment.',
+    '',
+    'Name: ' + data.get('fullName'),
+    'Phone: ' + data.get('phone'),
+    'Email: ' + (data.get('email') || 'Not provided'),
+    'Branch: ' + data.get('branch'),
+    'Preferred date: ' + data.get('date'),
+    'Service: ' + data.get('service'),
+    'Notes: ' + (data.get('notes') || 'None'),
+    '',
+    'I understand this is a request and needs confirmation.'
+  ].join('\n');
+
+  const whatsappURL = 'https://wa.me/966549488214?text=' + encodeURIComponent(message);
+  window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+});
+</script>
+</body>
+</html>
