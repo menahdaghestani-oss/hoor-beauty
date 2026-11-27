@@ -1,101 +1,286 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>الفيديوهات التعريفية - مركز حور</title>
-    <style>
-        /* تنسيق عام لصفحة الفيديوهات */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf8f5;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="شاهدي الفيديوهات التعريفية وخطوات العناية والجمال في مركز حور.">
+<meta name="theme-color" content="#4b1838">
+<title>الفيديوهات | مركز حور</title>
 
-        /* شريط التنقل المثبت أعلى الصفحة */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #c98a8a;
-            padding: 12px 15px;
-            text-align: center;
-            z-index: 1000;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-            padding: 7px 12px;
-            display: inline-block;
-            border-radius: 6px;
-        }
+<style>
+:root {
+  --wine:#4b1838;
+  --berry:#762b58;
+  --purple:#76518f;
+  --gold:#c7a66a;
+  --cream:#fbf6f2;
+  --ink:#342631;
+  --white:#fff;
+}
 
-        nav a:hover {
-            background-color: #2a9d8f;
-        }
+* { box-sizing:border-box; }
 
-        /* حاوية الفيديو باستخدام Box Model */
-        .video-box {
-            width: 85%;
-            max-width: 750px;
-            margin: 35px auto;
-            background-color: #ffffff;
-            padding: 25px;
-            border: 2px solid #e8d5cc;
-            border-radius: 14px;
-            text-align: center;
-        }
+html { scroll-behavior:smooth; }
 
-        h1 {
-            color: #a66363;
-        }
+body {
+  margin:0;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.9;
+}
 
-        h2, h3 {
-            color: #2a9d8f;
-        }
+nav {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:12px;
+  background:var(--wine);
+}
 
-        video {
-            width: 100%;
-            max-width: 560px;
-            border: 3px solid #2a9d8f;
-            border-radius: 10px;
-            margin-top: 15px;
-            background-color: #000000;
-        }
-    </style>
+nav a {
+  color:white;
+  text-decoration:none;
+  padding:7px 13px;
+  border-radius:25px;
+  transition:.3s;
+}
+
+nav a:hover { background:var(--purple); }
+
+header {
+  padding:60px 20px;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(120deg,#301027e8,#762b58c9),
+    url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1500') center/cover;
+}
+
+header h1 {
+  font-size:clamp(30px,5vw,44px);
+  margin:0 0 10px;
+}
+
+header p {
+  max-width:700px;
+  margin:auto;
+}
+
+main {
+  width:min(1050px,92%);
+  margin:35px auto;
+}
+
+.section {
+  padding:30px;
+  margin-bottom:25px;
+  background:white;
+  border:1px solid #eadde4;
+  border-radius:20px;
+  box-shadow:0 12px 32px #4b183811;
+}
+
+h2 { color:var(--wine); }
+h3 { color:var(--purple); }
+
+.video-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:22px;
+}
+
+.video-card {
+  overflow:hidden;
+  border:1px solid #eadde4;
+  border-radius:16px;
+  background:#fffdfd;
+  transition:.3s;
+}
+
+.video-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px #4b183820;
+}
+
+video {
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#21151e;
+  object-fit:cover;
+}
+
+.video-info { padding:18px; }
+
+.video-info h3 { margin-top:0; }
+
+.video-info p { margin-bottom:0; }
+
+.video-note {
+  padding:15px;
+  background:#fbf6ed;
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+}
+
+.button {
+  display:inline-block;
+  padding:10px 22px;
+  margin-top:12px;
+  color:white;
+  background:var(--wine);
+  text-decoration:none;
+  border-radius:25px;
+  transition:.3s;
+}
+
+.button:hover { background:var(--purple); }
+
+footer {
+  padding:25px;
+  text-align:center;
+  color:white;
+  background:var(--wine);
+}
+
+footer a { color:#f5dfb5; }
+
+@media(max-width:700px) {
+  nav { gap:3px; }
+  nav a { padding:6px 8px; font-size:12px; }
+  .video-grid { grid-template-columns:1fr; }
+  .section { padding:20px 15px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { transition:none !important; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- شريط التنقل للتنقل بين صفحات المشروع -->
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">نبذة عن المركز</a>
-        <a href="videos.html">الفيديوهات</a>
-        <a href="register.html">التسجيل وحجز موعد</a>
-        <a href="contact.html">تواصل معنا</a>
-    </nav>
+<nav aria-label="القائمة الرئيسية">
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="videos.html" aria-current="page">الفيديوهات</a>
+  <a href="register.html">حجز موعد</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a href="index-en.html" lang="en">English</a>
+</nav>
 
-    <div class="video-box">
-        <h1>فيديوهات تعريفية عن خدمات مركز حور</h1>
+<header>
+  <h1>اكتشفي عالم حور بالفيديو</h1>
+  <p>
+    تعرفي على أجواء العناية والجمال،
+    واكتشفي معلومات تساعدكِ على فهم خيارات العناية المختلفة.
+  </p>
+</header>
+
+<main>
+
+<section class="section">
+  <h2>مكتبة الفيديوهات</h2>
+  <p>
+    تحتوي هذه الصفحة على مقاطع توضيحية باستخدام مشغل HTML5،
+    ويمكن تشغيل الفيديو وإيقافه والتحكم بالصوت من خلال أزرار المشغل.
+  </p>
+
+  <div class="video-grid">
+
+    <article class="video-card">
+      <video controls preload="metadata"
+        poster="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800">
+        <source
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+          type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+
+      <div class="video-info">
+        <h3>الفيديو التعريفي الأول</h3>
         <p>
-            شاهدي الفيديو التعريفي حول خطوات <b>العناية بالبشرة</b> و<strong>التجميل اللاجراحي</strong> في المركز.<br>
-            يحتوي المشغل على أزرار التحكم الكاملة (`controls`) لتشغيل المقطع وإيقافه والتحكم بالصوت.
+          مقطع تجريبي لشرح طريقة عرض وتشغيل الفيديوهات
+          داخل الموقع الإلكتروني.
         </p>
+      </div>
+    </article>
 
-        <!-- وسم الفيديو مع خاصية controls -->
-        <video controls>
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
+    <article class="video-card">
+      <video controls preload="metadata"
+        poster="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800">
+        <source
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+          type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
 
-        <hr>
+      <div class="video-info">
+        <h3>الفيديو التعريفي الثاني</h3>
+        <p>
+          مقطع تجريبي إضافي لتوضيح كيفية استخدام
+          مشغل الفيديو والتحكم به.
+        </p>
+      </div>
+    </article>
 
-        <h2>شرح محتوى الفيديو</h2>
-        <p>يستعرض المقطع نبذة بصرية عن الخدمات والعروض المميزة المقدمة في مركز حور.</p>
-    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>موضوعات نهتم بها</h2>
+
+  <h3>العناية بالبشرة</h3>
+  <p>
+    التعرف على أساسيات تنظيف البشرة وترطيبها
+    وأهمية اختيار المنتجات المناسبة.
+  </p>
+
+  <h3>التجميل غير الجراحي</h3>
+  <p>
+    التعرف على بعض الخيارات التجميلية
+    وأهمية الاستشارة المختصة قبل الإجراءات.
+  </p>
+
+  <h3>الاسترخاء والعناية بالجسم</h3>
+  <p>
+    معلومات حول جلسات الاسترخاء والتدليك
+    والعناية بالجسم.
+  </p>
+
+  <p class="video-note">
+    <strong>تنويه:</strong>
+    المقاطع الحالية تجريبية لتوضيح خاصية الفيديو في المشروع،
+    وليست تسجيلات أصلية لمركز حور.
+  </p>
+</section>
+
+<section class="section" style="text-align:center">
+  <h2>هل ترغبين بمعرفة المزيد؟</h2>
+  <p>تواصلي معنا أو قدمي طلب حجز موعد.</p>
+
+  <a class="button" href="register.html">حجز موعد</a>
+  <a class="button" href="contact.html">تواصل معنا</a>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>مركز حور | Hoor Beauty Center</strong></p>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p><a href="index.html">العودة للرئيسية</a></p>
+</footer>
 
 </body>
 </html>
