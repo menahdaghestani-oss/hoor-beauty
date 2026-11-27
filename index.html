@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مركز حور للتجميل والعناية بالبشرة - الرئيسية</title>
+    <style>
+        /* تنسيق عام للصفحة واستخدام ألوان بصيغ مختلفة (Hex, RGB, RGBA) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf8f5; /* سكري */
+            color: rgb(65, 55, 55);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* شريط التنقل المثبت أعلى الصفحة عند التمرير */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #c98a8a; /* وردي ترابي */
+            padding: 12px 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 7px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* حالة مرور الماوس Hover */
+        nav a:hover {
+            background-color: #2a9d8f; /* فيروزي */
+            color: #ffffff;
+        }
+
+        /* تطبيق Box Model على الحاوية الرئيسية */
+        .container {
+            width: 88%;
+            margin: 25px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border: 2px solid #e8d5cc;
+            border-radius: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #a66363;
+            font-size: 28px;
+        }
+
+        /* المحدد على أكثر من عنصر معاً */
+        h2, h3 {
+            color: #2a9d8f;
+            border-bottom: 2px solid #f4e6e0;
+            padding-bottom: 6px;
+        }
+
+        /* المحدد باستخدام ID */
+        #hero-banner {
+            background-color: rgba(42, 157, 143, 0.08);
+            border-right: 5px solid #2a9d8f;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        /* معرض الأعمال */
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .gallery-grid img {
+            width: 31%;
+            min-width: 180px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #c98a8a;
+        }
+
+        /* تنسيق الجدول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #c98a8a;
+            color: #ffffff;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #a66363;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- بداية شريط التنقل المثبت أعلى الصفحة -->
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عن المركز</a>
+        <a href="videos.html">الفيديوهات</a>
+        <a href="register.html">التسجيل وحجز موعد</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="index-en.html" style="background-color: #264653; border: 1px solid #fff;">English</a>
+    </nav>
+
+    <div class="container">
+        <!-- شعار المركز بأبعاد محددة وخاصية alt -->
+        <div style="text-align: center;">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&auto=format&fit=crop" width="130" height="130" alt="شعار مركز حور للتجميل والعناية بالبشرة" style="border-radius: 50%; object-fit: cover; border: 3px solid #c98a8a;">
+        </div>
+
+        <h1>مركز حور للتجميل والعناية بالبشرة</h1>
+
+        <div id="hero-banner">
+            <p>
+                أهلاً بكِ في عالم الجمال والعناية المتكاملة حيث نجمع بين <b>الخبرة الطبية</b> و<strong>التجميل اللاجراحي</strong>.<br>
+                نعتمد على تركيبات مرطبة غنية بجزيئات H<sub>2</sub>O النقية، مع أحدث تقنيات العناية بالبشرة للقرن 21<sup>st</sup>.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>معرض أعمالنا وأجواء المركز</h2>
+        <p>
+            نحرص في مركز حور على توفير بيئة راقية ومريحة تعكس أعلى معايير الجودة والخصوصية.<br>
+            تصفحي لقطات من جلساتنا العلاجية وأحدث الأجهزة المعتمدة لدينا.
+        </p>
+
+        <!-- صور معرض الأعمال -->
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&auto=format&fit=crop" width="250" height="170" alt="جلسة تنظيف البشرة العميق">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&auto=format&fit=crop" width="250" height="170" alt="أجهزة التجميل اللاجراحي الحديثة">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&auto=format&fit=crop" width="250" height="170" alt="ركن العناية والاسترخاء في مركز حور">
+        </div>
+
+        <!-- قائمة مرقمة ol -->
+        <h3>خطوات العناية بالبشرة في مركزنا:</h3>
+        <ol>
+            <li>تشخيص دقيق لنوع البشرة واحتياجاتها.</li>
+            <li>تنظيف عميق وتقشير لطيف لإزالة الشوائب.</li>
+            <li>تغذية البشرة بالسيرومات والفيتامينات المناسبة.</li>
+        </ol>
+
+        <!-- قائمة غير مرقمة ul بنوع square -->
+        <h3>لماذا تختارين مركز حور؟</h3>
+        <ul type="square">
+            <li>أخصائيات معتمدات في العناية بالبشرة والتجميل اللاجراحي.</li>
+            <li>أجهزة حديثة حاصلة على شهادات الجودة العالمية.</li>
+            <li>باقات وعروض شهرية تناسب جميع الاحتياجات.</li>
+        </ul>
+
+        <!-- جدول بـ caption و th و td و 5 صفوف بيانات مع border -->
+        <table border="1">
+            <caption>جدول الجلسات العلاجية والأسعار</caption>
+            <tr>
+                <th>الخدمة العلاجية</th>
+                <th>مدة الجلسة</th>
+                <th>السعر</th>
+            </tr>
+            <tr>
+                <td>تنظيف البشرة العميق (هيدرافيشل)</td>
+                <td>60 دقيقة</td>
+                <td>350 ريال</td>
+            </tr>
+            <tr>
+                <td>جلسة ميزوثيرابي للنضارة الفورية</td>
+                <td>45 دقيقة</td>
+                <td>500 ريال</td>
+            </tr>
+            <tr>
+                <td>تقشير كيميائي بارد لتوحيد اللون</td>
+                <td>30 دقيقة</td>
+                <td>400 ريال</td>
+            </tr>
+            <tr>
+                <td>جلسة ديرما بن مع الفيتامينات</td>
+                <td>50 دقيقة</td>
+                <td>450 ريال</td>
+            </tr>
+            <tr>
+                <td>إزالة الشعر بالليزر (كامل الجسم)</td>
+                <td>90 دقيقة</td>
+                <td>650 ريال</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <!-- رابط على صورة ورابط خارجي حقيقي -->
+        <div style="text-align: center; margin-top: 25px;">
+            <h3>اكتشفي المزيد عن مركزنا</h3>
+            <a href="about.html">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&auto=format&fit=crop" width="320" height="190" alt="اضغطي للتعرف على مركز حور" style="border: 3px solid #2a9d8f; border-radius: 10px; object-fit: cover;">
+            </a>
+            <br><br>
+            <a href="https://www.moh.gov.sa" target="_blank" style="color: #a66363; font-weight: bold;">الاطلاع على معايير السلامة الصحية المعتمدة</a>
+        </div>
+    </div>
+
+</body>
+</html>
