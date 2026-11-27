@@ -1,91 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>تواصل معنا - مركز حور</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf8f5;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #c98a8a;
-            padding: 12px 15px;
-            text-align: center;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-            padding: 7px 12px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #2a9d8f;
-            border-radius: 6px;
-        }
-        .contact-box {
-            width: 85%;
-            max-width: 650px;
-            margin: 35px auto;
-            background-color: #ffffff;
-            padding: 25px;
-            border: 2px solid #e8d5cc;
-            border-radius: 14px;
-            text-align: center;
-        }
-        h1 {
-            color: #a66363;
-        }
-        .btn-link {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 22px;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تواصلي مع مركز حور للتجميل والعناية بالبشرة في جدة وبريدة.">
+<meta name="theme-color" content="#4b1838">
+<title>تواصل معنا | مركز حور</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine:#4b1838;
+  --berry:#762b58;
+  --purple:#76518f;
+  --gold:#c7a66a;
+  --cream:#fbf6f2;
+  --ink:#342631;
+  --white:#fff;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.9;
+}
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:12px;
+  background:var(--wine);
+  box-shadow:0 4px 15px #0002;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  padding:7px 13px;
+  border-radius:25px;
+  transition:.3s;
+}
+
+nav a:hover { background:var(--purple); }
+
+header {
+  text-align:center;
+  padding:65px 20px;
+  color:white;
+  background:
+  linear-gradient(120deg,#301027e8,#762b58c9),
+  url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1500') center/cover;
+}
+
+header h1 {
+  font-size:clamp(30px,5vw,45px);
+  margin:0 0 10px;
+}
+
+header p {
+  max-width:650px;
+  margin:auto;
+}
+
+main {
+  width:min(1050px,92%);
+  margin:40px auto;
+}
+
+.section {
+  padding:30px;
+  margin-bottom:25px;
+  background:white;
+  border:1px solid #eadde4;
+  border-radius:20px;
+  box-shadow:0 12px 32px #4b183811;
+}
+
+h2 { color:var(--wine); }
+h3 { color:var(--purple); }
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.contact-card {
+  padding:22px;
+  text-align:center;
+  background:#fbf3f7;
+  border:1px solid #ead6e2;
+  border-radius:16px;
+  transition:.3s;
+}
+
+.contact-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px #4b183820;
+}
+
+.contact-card h3 { margin-top:0; }
+
+.contact-link {
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  color:white;
+  background:var(--wine);
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.contact-link:hover {
+  background:var(--purple);
+  transform:translateY(-2px);
+}
+
+.whatsapp {
+  background:#168b55;
+}
+
+.whatsapp:hover { background:#106b40; }
+
+.table-wrap { overflow-x:auto; }
+
+table {
+  width:100%;
+  min-width:450px;
+  border-collapse:collapse;
+  margin-top:18px;
+}
+
+caption {
+  padding:12px;
+  font-size:18px;
+  font-weight:bold;
+  color:var(--wine);
+}
+
+th,td {
+  border:1px solid #eadde4;
+  padding:13px;
+  text-align:center;
+}
+
+th {
+  background:var(--wine);
+  color:white;
+}
+
+tbody tr:nth-child(even) {
+  background:#fbf3f7;
+}
+
+.info {
+  margin-top:20px;
+  padding:16px;
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+  background:#fbf6ed;
+}
+
+footer {
+  padding:25px;
+  text-align:center;
+  background:var(--wine);
+  color:white;
+}
+
+footer a { color:#f5dfb5; }
+
+@media(max-width:650px) {
+  nav { gap:3px; }
+  nav a { padding:6px 8px; font-size:12px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .section { padding:20px 15px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { transition:none !important; }
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">نبذة عن المركز</a>
-        <a href="videos.html">الفيديوهات</a>
-        <a href="register.html">التسجيل وحجز موعد</a>
-        <a href="contact.html">تواصل معنا</a>
-    </nav>
+<!-- Main Navigation -->
+<nav aria-label="القائمة الرئيسية">
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="videos.html">الفيديوهات</a>
+  <a href="register.html">حجز موعد</a>
+  <a href="contact.html" aria-current="page">تواصل معنا</a>
+  <a href="index-en.html" lang="en">English</a>
+</nav>
 
-    <div class="contact-box">
-        <h1>معلومات التواصل</h1>
-        <p>فريق خدمة العملاء في مركز حور جاهز للرد على استفساراتكم على مدار الأسبوع:</p>
+<header>
+  <h1>نسعد بتواصلكِ معنا</h1>
+  <p>
+    نحن هنا للإجابة عن استفساراتكِ ومساعدتكِ
+    في التعرف على خدمات مركز حور.
+  </p>
+</header>
 
-        <hr>
+<main>
 
-        <!-- رابط إيميل فعّال -->
-        <a href="mailto:contact@hoor-center.com" class="btn-link" style="background-color: #c98a8a;">
-            إرسال بريد إلكتروني
-        </a>
+<section class="section">
+  <h2>قنوات التواصل</h2>
+  <p>
+    اختاري الطريقة المناسبة للتواصل معنا،
+    وسنسعد باستقبال استفساراتكِ.
+  </p>
 
-        <!-- رابط انتقال للواتساب -->
-        <a href="https://wa.me/966549488214" target="_blank" class="btn-link" style="background-color: #25D366;">
-            التواصل عبر واتساب مباشرة
-        </a>
+  <div class="contact-grid">
 
-        <div style="margin-top: 25px; text-align: right; background-color: #fdf8f5; padding: 15px; border-radius: 8px;">
-            <h3>أوقات الدوام والموقع:</h3>
-            <p>السبت - الخميس: من الساعة 10 صباحاً وحتى 10 مساءً.</p>
-            <p>الموقع: جدة - المملكة العربية السعودية.</p>
-        </div>
-    </div>
+    <article class="contact-card">
+      <h3>واتساب</h3>
+      <p>تواصلي معنا مباشرة عبر واتساب.</p>
+      <a class="contact-link whatsapp"
+         href="https://wa.me/966549488214"
+         target="_blank"
+         rel="noopener noreferrer">
+        محادثة واتساب
+      </a>
+    </article>
+
+    <article class="contact-card">
+      <h3>البريد الإلكتروني</h3>
+      <p>أرسلي استفساركِ عبر البريد الإلكتروني.</p>
+      <a class="contact-link"
+         href="mailto:contact@hoor-center.com">
+        إرسال بريد إلكتروني
+      </a>
+    </article>
+
+    <article class="contact-card">
+      <h3>حجز موعد</h3>
+      <p>قدمي طلباً مبدئياً لحجز زيارتكِ.</p>
+      <a class="contact-link" href="register.html">
+        نموذج الحجز
+      </a>
+    </article>
+
+    <article class="contact-card">
+      <h3>التعرف على خدماتنا</h3>
+      <p>اكتشفي المزيد عن مركز حور.</p>
+      <a class="contact-link" href="about.html">
+        من نحن
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>معلومات المركز</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption>بيانات التواصل والفروع</caption>
+      <thead>
+        <tr>
+          <th scope="col">البيان</th>
+          <th scope="col">التفاصيل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>اسم المركز</td>
+          <td>مركز حور للتجميل</td>
+        </tr>
+        <tr>
+          <td>الموقع الأول</td>
+          <td>جدة - المملكة العربية السعودية</td>
+        </tr>
+        <tr>
+          <td>الموقع الثاني</td>
+          <td>بريدة - المملكة العربية السعودية</td>
+        </tr>
+        <tr>
+          <td>أيام العمل</td>
+          <td>السبت إلى الخميس</td>
+        </tr>
+        <tr>
+          <td>ساعات العمل</td>
+          <td>10 صباحاً - 10 مساءً</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="info">
+    يرجى التواصل معنا قبل الزيارة للتأكد من مواعيد العمل
+    وتوفر الخدمة المطلوبة في الفرع المناسب.
+  </p>
+</section>
+
+<section class="section">
+  <h2>ملاحظات مهمة</h2>
+  <ul>
+    <li>يمكنكِ التواصل للاستفسار عن الخدمات والأسعار.</li>
+    <li>طلبات الحجز تحتاج إلى تأكيد من فريق المركز.</li>
+    <li>تختلف الخدمات المتاحة حسب الفرع والمواعيد.</li>
+  </ul>
+
+  <p>
+    للمزيد من المعلومات الصحية:
+    <a href="https://www.moh.gov.sa"
+       target="_blank"
+       rel="noopener noreferrer">
+      وزارة الصحة السعودية
+    </a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>مركز حور | Hoor Beauty Center</strong></p>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p><a href="index.html">العودة إلى الرئيسية</a></p>
+</footer>
 
 </body>
 </html>
