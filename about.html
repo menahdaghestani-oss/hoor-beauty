@@ -1,102 +1,311 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>نبذة عن المركز - مركز حور</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf8f5;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #c98a8a;
-            padding: 12px 15px;
-            text-align: center;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-            padding: 7px 12px;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #2a9d8f;
-            border-radius: 6px;
-        }
-        header {
-            background-color: #f4e6e0;
-            padding: 25px;
-            text-align: center;
-        }
-        h1 {
-            color: #a66363;
-        }
-        .about-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 88%;
-            margin: 25px auto;
-            gap: 15px;
-        }
-        article {
-            background-color: #ffffff;
-            border: 1px solid #e8d5cc;
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-            min-width: 220px;
-            text-align: center;
-        }
-        footer {
-            background-color: #c98a8a;
-            color: #ffffff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 35px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تعرفي على رؤية ورسالة وقيم مركز حور للتجميل والعناية بالبشرة.">
+<title>من نحن | مركز حور للتجميل</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine:#4b1838;
+  --berry:#762b58;
+  --purple:#76518f;
+  --gold:#c7a66a;
+  --cream:#fbf6f2;
+  --white:#fff;
+  --ink:#342631;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.9;
+}
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:13px;
+  background:var(--wine);
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  padding:7px 13px;
+  border-radius:25px;
+  transition:.3s;
+}
+
+nav a:hover {
+  background:var(--purple);
+}
+
+header {
+  padding:65px 20px;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(120deg,#301027df,#762b58bb),
+    url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1500') center/cover;
+}
+
+header h1 {
+  font-size:clamp(30px,5vw,44px);
+  margin:0 0 12px;
+}
+
+header p {
+  max-width:700px;
+  margin:auto;
+  font-size:17px;
+}
+
+main {
+  width:min(1100px,92%);
+  margin:35px auto;
+}
+
+.section {
+  margin:25px 0;
+  padding:30px;
+  background:white;
+  border:1px solid #eadde4;
+  border-radius:20px;
+  box-shadow:0 12px 32px #4b183811;
+}
+
+h2 { color:var(--wine); }
+h3 { color:var(--purple); }
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.card {
+  padding:23px;
+  text-align:center;
+  background:#fbf3f7;
+  border:1px solid #ead6e2;
+  border-radius:17px;
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px #4b183820;
+}
+
+.card h3 { margin-top:0; }
+
+.about-image {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:16px;
+  display:block;
+  margin-top:18px;
+}
+
+ul { padding-right:25px; }
+li { margin:8px 0; }
+
+.highlight {
+  padding:15px 20px;
+  background:#fbf6ed;
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+}
+
+.button {
+  display:inline-block;
+  padding:11px 24px;
+  background:var(--wine);
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+  transition:.3s;
+}
+
+.button:hover {
+  background:var(--purple);
+  transform:translateY(-2px);
+}
+
+footer {
+  padding:25px;
+  text-align:center;
+  color:white;
+  background:var(--wine);
+}
+
+footer a { color:#f5dfb5; }
+
+@media(max-width:720px) {
+  nav { gap:3px; }
+  nav a { padding:6px 9px; font-size:13px; }
+  .cards { grid-template-columns:1fr; }
+  .section { padding:20px 16px; }
+  .about-image { height:220px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { transition:none !important; }
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">نبذة عن المركز</a>
-        <a href="videos.html">الفيديوهات</a>
-        <a href="register.html">التسجيل وحجز موعد</a>
-        <a href="contact.html">تواصل معنا</a>
-    </nav>
+<!-- شريط التنقل الرئيسي -->
+<nav aria-label="القائمة الرئيسية">
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html" aria-current="page">من نحن</a>
+  <a href="videos.html">الفيديوهات</a>
+  <a href="register.html">حجز موعد</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a href="index-en.html" lang="en">English</a>
+</nav>
 
-    <header>
-        <h1>نبذة عن مركز حور للتجميل والعناية بالبشرة</h1>
-        <p>خبرة متخصصة في العناية بالبشرة والتجميل اللاجراحي بأحدث الأجهزة العالمية.</p>
-    </header>
+<header>
+  <h1>حكاية حور</h1>
+  <p>
+    الجمال يبدأ بالاهتمام، والثقة تنمو مع العناية.
+    أهلاً بكِ في عالم يجمع الأناقة والراحة والاهتمام بالتفاصيل.
+  </p>
+</header>
 
-    <section class="about-grid">
-        <article>
-            <h2 style="color: #2a9d8f;">رؤيتنا</h2>
-            <p>الريادة في تقديم حلول العناية بالبشرة والتجميل الآمن وفق أعلى المعايير الطبية.</p>
-        </article>
-        <article>
-            <h2 style="color: #2a9d8f;">رسالتنا</h2>
-            <p>إبراز جمالك الطبيعي عبر خطط علاجية مخصصة لكل عميلة باستخدام منتجات معتمدة.</p>
-        </article>
-        <article>
-            <h2 style="color: #2a9d8f;">معرض أعمالنا</h2>
-            <p>نفخر بتوثيق نتائج جلساتنا الناجحة وتجارب عميلاتنا المميزة في كافة فروع المركز.</p>
-        </article>
-    </section>
+<main>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - مركز حور للتجميل</p>
-    </footer>
+<section class="section">
+  <h2>من نحن؟</h2>
+
+  <p>
+    مركز حور هو مشروع متخصص في مجال التجميل والعناية بالبشرة،
+    يهدف إلى تقديم تجربة مريحة وراقية للزائرات.
+  </p>
+
+  <p>
+    نؤمن بأن لكل بشرة احتياجات مختلفة،
+    لذلك نهتم بالتوعية بخيارات العناية وشرح الإجراءات
+    قبل اتخاذ قرار اختيار الخدمة المناسبة.
+  </p>
+
+  <img
+    class="about-image"
+    src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1000"
+    width="1000"
+    height="500"
+    alt="أجواء أنيقة وهادئة للعناية والجمال">
+</section>
+
+<section class="section">
+  <h2>رؤيتنا ورسالتنا وقيمنا</h2>
+
+  <div class="cards">
+
+    <article class="card">
+      <h3>رؤيتنا</h3>
+      <p>
+        أن يكون مركز حور مساحة مميزة للعناية والجمال،
+        تجمع بين الجودة والراحة والاهتمام بالتفاصيل.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>رسالتنا</h3>
+      <p>
+        توفير تجربة عناية واضحة ومريحة،
+        مع احترام احتياجات كل زائرة وتقديم المعلومات اللازمة لها.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>قيمنا</h3>
+      <p>
+        الجودة، الخصوصية، الأمانة، النظافة،
+        والاهتمام بالتجربة الإنسانية.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>ما الذي يميز تجربة حور؟</h2>
+
+  <ul type="circle">
+    <li>الاهتمام براحة الزائرات وخصوصيتهن.</li>
+    <li>شرح تفاصيل الخدمات قبل الحجز.</li>
+    <li>الاهتمام بالنظافة وإرشادات السلامة.</li>
+    <li>تقديم معلومات واضحة عن العناية المنزلية.</li>
+    <li>الاهتمام بالتفاصيل الجمالية في أجواء المركز.</li>
+  </ul>
+
+  <p class="highlight">
+    <strong>هدفنا:</strong>
+    أن تكون كل زيارة تجربة مريحة تبدأ بالترحيب
+    وتنتهي بمعلومات واضحة حول العناية المناسبة.
+  </p>
+</section>
+
+<section class="section">
+  <h2>مجالات العناية والجمال</h2>
+
+  <h3>العناية بالبشرة</h3>
+  <p>
+    تشمل خيارات تنظيف البشرة وترطيبها والعناية بمظهرها،
+    بحسب تقييم المختصين واحتياجات كل حالة.
+  </p>
+
+  <h3>التجميل غير الجراحي</h3>
+  <p>
+    تشمل بعض الخيارات التجميلية التي لا تتطلب تدخلاً جراحياً،
+    ويتم تحديد مدى مناسبتها بعد الاستشارة المختصة.
+  </p>
+
+  <h3>الاسترخاء والعناية بالجسم</h3>
+  <p>
+    يمكن أن تشمل جلسات الاسترخاء والتدليك،
+    وفق الخدمات المتاحة لدى المركز.
+  </p>
+</section>
+
+<section class="section" style="text-align:center">
+  <h2>نحن بانتظاركِ</h2>
+  <p>
+    اكتشفي خدمات مركز حور وتواصلي معنا
+    لمعرفة التفاصيل وحجز موعدك.
+  </p>
+
+  <a class="button" href="register.html">احجزي موعدك الآن</a>
+  <a class="button" href="contact.html">تواصلي معنا</a>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>مركز حور | Hoor Beauty Center</strong></p>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p><a href="index.html">العودة إلى الرئيسية</a></p>
+</footer>
 
 </body>
 </html>
