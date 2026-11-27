@@ -1,227 +1,428 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>مركز حور للتجميل والعناية بالبشرة - الرئيسية</title>
-    <style>
-        /* تنسيق عام للصفحة واستخدام ألوان بصيغ مختلفة (Hex, RGB, RGBA) */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf8f5; /* سكري */
-            color: rgb(65, 55, 55);
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="مركز حور للتجميل والعناية بالبشرة والاسترخاء.">
+<meta name="theme-color" content="#4b1838">
+<title>مركز حور | Hoor Beauty Center</title>
 
-        /* شريط التنقل المثبت أعلى الصفحة عند التمرير */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #c98a8a; /* وردي ترابي */
-            padding: 12px 15px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-            font-size: 15px;
-            padding: 7px 12px;
-            border-radius: 6px;
-            display: inline-block;
-        }
+<style>
+:root {
+  --wine:#4b1838;
+  --berry:#762b58;
+  --purple:#76518f;
+  --rose:#c98da5;
+  --gold:#c7a66a;
+  --cream:#fbf6f2;
+  --ink:#342631;
+  --white:#fff;
+}
 
-        /* حالة مرور الماوس Hover */
-        nav a:hover {
-            background-color: #2a9d8f; /* فيروزي */
-            color: #ffffff;
-        }
+* { box-sizing:border-box; }
 
-        /* تطبيق Box Model على الحاوية الرئيسية */
-        .container {
-            width: 88%;
-            margin: 25px auto;
-            padding: 25px;
-            background-color: #ffffff;
-            border: 2px solid #e8d5cc;
-            border-radius: 14px;
-        }
+html { scroll-behavior:smooth; }
 
-        h1 {
-            text-align: center;
-            color: #a66363;
-            font-size: 28px;
-        }
+body {
+  margin:0;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.9;
+}
 
-        /* المحدد على أكثر من عنصر معاً */
-        h2, h3 {
-            color: #2a9d8f;
-            border-bottom: 2px solid #f4e6e0;
-            padding-bottom: 6px;
-        }
+a { color:inherit; }
 
-        /* المحدد باستخدام ID */
-        #hero-banner {
-            background-color: rgba(42, 157, 143, 0.08);
-            border-right: 5px solid #2a9d8f;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
+nav {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:13px;
+  background:var(--wine);
+  box-shadow:0 4px 18px #0002;
+}
 
-        /* معرض الأعمال */
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 12px;
-            margin: 20px 0;
-        }
+nav a {
+  color:white;
+  text-decoration:none;
+  padding:7px 14px;
+  border-radius:25px;
+  transition:.3s;
+}
 
-        .gallery-grid img {
-            width: 31%;
-            min-width: 180px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #c98a8a;
-        }
+nav a:hover {
+  background:var(--purple);
+  color:white;
+}
 
-        /* تنسيق الجدول */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+nav .language {
+  border:1px solid var(--gold);
+  color:#f5dfb5;
+}
 
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
+.hero {
+  min-height:500px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:65px 20px;
+  color:white;
+  background:
+  linear-gradient(120deg,#301027df,#762b58a8),
+  url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600') center/cover;
+}
 
-        th {
-            background-color: #c98a8a;
-            color: #ffffff;
-        }
+.hero-content { max-width:800px; }
 
-        caption {
-            font-weight: bold;
-            font-size: 19px;
-            margin-bottom: 10px;
-            color: #a66363;
-        }
-    </style>
+.hero img {
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border:3px solid var(--gold);
+  border-radius:50%;
+}
+
+h1 {
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.4;
+  margin:15px 0;
+}
+
+.hero p {
+  font-size:18px;
+  color:#fff4f8;
+}
+
+.btn {
+  display:inline-block;
+  margin:8px;
+  padding:11px 25px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:var(--gold);
+  color:#321a2a;
+  text-decoration:none;
+  font-weight:800;
+  transition:.3s;
+}
+
+.btn:hover {
+  background:transparent;
+  color:white;
+  transform:translateY(-3px);
+}
+
+.btn-outline {
+  background:transparent;
+  color:white;
+}
+
+main {
+  width:min(1100px,92%);
+  margin:35px auto;
+}
+
+.section {
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:22px;
+  border:1px solid #eadde4;
+  box-shadow:0 14px 38px #4b183811;
+}
+
+h2 { color:var(--wine); font-size:27px; }
+h3 { color:var(--purple); }
+
+.intro { color:#786b75; }
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+figure {
+  margin:0;
+  overflow:hidden;
+  border-radius:15px;
+  background:var(--cream);
+}
+
+figure img {
+  display:block;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+figure:hover img { transform:scale(1.05); }
+
+figcaption {
+  padding:10px;
+  text-align:center;
+  color:var(--wine);
+  font-weight:bold;
+}
+
+ul,ol { padding-right:25px; }
+
+li { margin:8px 0; }
+
+.table-wrap { overflow-x:auto; }
+
+table {
+  width:100%;
+  min-width:500px;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+caption {
+  padding:12px;
+  color:var(--wine);
+  font-size:19px;
+  font-weight:bold;
+}
+
+th,td {
+  border:1px solid #e7d9e1;
+  padding:12px;
+  text-align:center;
+}
+
+th {
+  background:var(--wine);
+  color:white;
+}
+
+tbody tr:nth-child(even) { background:#fbf3f7; }
+tbody tr:hover { background:#f1e5ed; }
+
+.note {
+  padding:15px;
+  border-right:4px solid var(--gold);
+  background:#fbf6ed;
+  border-radius:10px;
+}
+
+footer {
+  padding:25px;
+  text-align:center;
+  background:var(--wine);
+  color:white;
+}
+
+footer a { color:#f5dfb5; }
+
+@media(max-width:720px) {
+  nav { gap:3px; }
+  nav a { padding:6px 9px; font-size:13px; }
+  .hero { min-height:400px; }
+  .gallery { grid-template-columns:1fr; }
+  .section { padding:20px 15px; }
+  .hero p { font-size:16px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { transition:none !important; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- بداية شريط التنقل المثبت أعلى الصفحة -->
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">نبذة عن المركز</a>
-        <a href="videos.html">الفيديوهات</a>
-        <a href="register.html">التسجيل وحجز موعد</a>
-        <a href="contact.html">تواصل معنا</a>
-        <a href="index-en.html" style="background-color: #264653; border: 1px solid #fff;">English</a>
-    </nav>
+<!-- Navigation Bar -->
+<nav aria-label="القائمة الرئيسية">
+  <a href="index.html" aria-current="page">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="videos.html">الفيديوهات</a>
+  <a href="register.html">حجز موعد</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a class="language" href="index-en.html" lang="en">English</a>
+</nav>
 
-    <div class="container">
-        <!-- شعار المركز بأبعاد محددة وخاصية alt -->
-        <div style="text-align: center;">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&auto=format&fit=crop" width="130" height="130" alt="شعار مركز حور للتجميل والعناية بالبشرة" style="border-radius: 50%; object-fit: cover; border: 3px solid #c98a8a;">
-        </div>
+<!-- Main Header -->
+<header class="hero">
+  <div class="hero-content">
+    <img
+      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300"
+      width="110"
+      height="110"
+      alt="صورة تعبر عن العناية بالبشرة">
+    <h1>مركز حور للتجميل والعناية بالبشرة</h1>
+    <p>
+      جمالك يستحق عناية استثنائية.
+      اكتشفي تجربة تجمع بين الفخامة والراحة
+      والاهتمام بأدق تفاصيل جمالك.
+    </p>
+    <a class="btn" href="register.html">احجزي موعدك</a>
+    <a class="btn btn-outline" href="about.html">اكتشفي عالم حور</a>
+  </div>
+</header>
 
-        <h1>مركز حور للتجميل والعناية بالبشرة</h1>
+<main>
 
-        <div id="hero-banner">
-            <p>
-                أهلاً بكِ في عالم الجمال والعناية المتكاملة حيث نجمع بين <b>الخبرة الطبية</b> و<strong>التجميل اللاجراحي</strong>.<br>
-                نعتمد على تركيبات مرطبة غنية بجزيئات H<sub>2</sub>O النقية، مع أحدث تقنيات العناية بالبشرة للقرن 21<sup>st</sup>.
-            </p>
-        </div>
+<section class="section">
+  <h2>أهلاً بكِ في عالم حور</h2>
+  <p class="intro">
+    نرحب بكِ في مركز حور، حيث تلتقي العناية بالجمال
+    مع أجواء الراحة والاهتمام بالتفاصيل.
+  </p>
+  <p>
+    نقدم تجربة متكاملة للعناية بالبشرة والجمال،
+    مع الحرص على توضيح الخدمات واختيار الإجراء المناسب
+    بعد استشارة المختصين.
+  </p>
+  <p class="note">
+    <strong>معلومة علمية:</strong>
+    الماء أساس الترطيب وصيغته الكيميائية
+    H<sub>2</sub>O، ونواكب تطورات العناية في القرن
+    21<sup>st</sup>.
+  </p>
+</section>
 
-        <hr>
+<section class="section">
+  <h2>لمحات من عالم الجمال</h2>
+  <p class="intro">
+    اكتشفي أجواء العناية والاسترخاء في عالم حور.
+  </p>
 
-        <h2>معرض أعمالنا وأجواء المركز</h2>
-        <p>
-            نحرص في مركز حور على توفير بيئة راقية ومريحة تعكس أعلى معايير الجودة والخصوصية.<br>
-            تصفحي لقطات من جلساتنا العلاجية وأحدث الأجهزة المعتمدة لدينا.
-        </p>
+  <div class="gallery">
 
-        <!-- صور معرض الأعمال -->
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&auto=format&fit=crop" width="250" height="170" alt="جلسة تنظيف البشرة العميق">
-            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&auto=format&fit=crop" width="250" height="170" alt="أجهزة التجميل اللاجراحي الحديثة">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&auto=format&fit=crop" width="250" height="170" alt="ركن العناية والاسترخاء في مركز حور">
-        </div>
+    <figure>
+      <img
+        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=700"
+        width="700" height="460"
+        alt="منتجات العناية بالبشرة">
+      <figcaption>العناية بالبشرة</figcaption>
+    </figure>
 
-        <!-- قائمة مرقمة ol -->
-        <h3>خطوات العناية بالبشرة في مركزنا:</h3>
-        <ol>
-            <li>تشخيص دقيق لنوع البشرة واحتياجاتها.</li>
-            <li>تنظيف عميق وتقشير لطيف لإزالة الشوائب.</li>
-            <li>تغذية البشرة بالسيرومات والفيتامينات المناسبة.</li>
-        </ol>
+    <figure>
+      <img
+        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700"
+        width="700" height="460"
+        alt="جلسة عناية واسترخاء">
+      <figcaption>جلسات الاسترخاء</figcaption>
+    </figure>
 
-        <!-- قائمة غير مرقمة ul بنوع square -->
-        <h3>لماذا تختارين مركز حور؟</h3>
-        <ul type="square">
-            <li>أخصائيات معتمدات في العناية بالبشرة والتجميل اللاجراحي.</li>
-            <li>أجهزة حديثة حاصلة على شهادات الجودة العالمية.</li>
-            <li>باقات وعروض شهرية تناسب جميع الاحتياجات.</li>
-        </ul>
+    <figure>
+      <img
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700"
+        width="700" height="460"
+        alt="أجواء سبا فاخرة">
+      <figcaption>أجواء حور الراقية</figcaption>
+    </figure>
 
-        <!-- جدول بـ caption و th و td و 5 صفوف بيانات مع border -->
-        <table border="1">
-            <caption>جدول الجلسات العلاجية والأسعار</caption>
-            <tr>
-                <th>الخدمة العلاجية</th>
-                <th>مدة الجلسة</th>
-                <th>السعر</th>
-            </tr>
-            <tr>
-                <td>تنظيف البشرة العميق (هيدرافيشل)</td>
-                <td>60 دقيقة</td>
-                <td>350 ريال</td>
-            </tr>
-            <tr>
-                <td>جلسة ميزوثيرابي للنضارة الفورية</td>
-                <td>45 دقيقة</td>
-                <td>500 ريال</td>
-            </tr>
-            <tr>
-                <td>تقشير كيميائي بارد لتوحيد اللون</td>
-                <td>30 دقيقة</td>
-                <td>400 ريال</td>
-            </tr>
-            <tr>
-                <td>جلسة ديرما بن مع الفيتامينات</td>
-                <td>50 دقيقة</td>
-                <td>450 ريال</td>
-            </tr>
-            <tr>
-                <td>إزالة الشعر بالليزر (كامل الجسم)</td>
-                <td>90 دقيقة</td>
-                <td>650 ريال</td>
-            </tr>
-        </table>
+  </div>
+</section>
 
-        <hr>
+<section class="section">
+  <h2>رحلتكِ نحو العناية</h2>
 
-        <!-- رابط على صورة ورابط خارجي حقيقي -->
-        <div style="text-align: center; margin-top: 25px;">
-            <h3>اكتشفي المزيد عن مركزنا</h3>
-            <a href="about.html">
-                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&auto=format&fit=crop" width="320" height="190" alt="اضغطي للتعرف على مركز حور" style="border: 3px solid #2a9d8f; border-radius: 10px; object-fit: cover;">
-            </a>
-            <br><br>
-            <a href="https://www.moh.gov.sa" target="_blank" style="color: #a66363; font-weight: bold;">الاطلاع على معايير السلامة الصحية المعتمدة</a>
-        </div>
-    </div>
+  <h3>كيف تبدأ زيارتك؟</h3>
+  <ol>
+    <li>التعرف على احتياجات البشرة.</li>
+    <li>استشارة المختصين واختيار الخدمة المناسبة.</li>
+    <li>شرح خطوات الجلسة والعناية اللاحقة.</li>
+  </ol>
+
+  <h3>ما الذي نهتم به؟</h3>
+  <ul type="square">
+    <li>الخصوصية والراحة.</li>
+    <li>النظافة وإرشادات السلامة.</li>
+    <li>توضيح المعلومات قبل الحجز.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>خدمات العناية</h2>
+  <p class="intro">
+    جدول توضيحي لأمثلة خدمات العناية ومددها.
+    الأسعار التالية افتراضية لأغراض المشروع التعليمي.
+  </p>
+
+  <div class="table-wrap">
+    <table border="1">
+      <caption>جدول خدمات مركز حور</caption>
+
+      <thead>
+        <tr>
+          <th scope="col">الخدمة</th>
+          <th scope="col">المدة</th>
+          <th scope="col">السعر التوضيحي</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>تنظيف البشرة</td>
+          <td>60 دقيقة</td>
+          <td>350 ريال</td>
+        </tr>
+        <tr>
+          <td>جلسة ترطيب</td>
+          <td>45 دقيقة</td>
+          <td>500 ريال</td>
+        </tr>
+        <tr>
+          <td>تقشير سطحي</td>
+          <td>30 دقيقة</td>
+          <td>400 ريال</td>
+        </tr>
+        <tr>
+          <td>جلسة ديرمابن</td>
+          <td>50 دقيقة</td>
+          <td>450 ريال</td>
+        </tr>
+        <tr>
+          <td>استشارة البشرة</td>
+          <td>20 دقيقة</td>
+          <td>100 ريال</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>اكتشفي المزيد</h2>
+  <p>تعرفي على رؤيتنا وخدماتنا من خلال صفحات الموقع.</p>
+
+  <p>
+    <a href="about.html">اقرئي المزيد عن مركز حور</a>
+  </p>
+
+  <p>
+    <a href="https://www.moh.gov.sa"
+       target="_blank"
+       rel="noopener noreferrer">
+       وزارة الصحة السعودية
+    </a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>مركز حور | Hoor Beauty Center</strong></p>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p><a href="contact.html">تواصلي معنا</a></p>
+</footer>
 
 </body>
 </html>
