@@ -126,23 +126,28 @@ footer a{color:#f5dfb5}
 
 <script>
 const dateInput = document.getElementById('date');
+const appointmentForm = document.getElementById('appointmentForm');
 
-function getLocalDateString(){
+function getToday() {
   const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth()+1).padStart(2,'0');
-  const day = String(now.getDate()).padStart(2,'0');
-  return `${year}-${month}-${day}`;
+  const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+  return local.toISOString().split('T')[0];
 }
 
-dateInput.min = getLocalDateString();
+dateInput.min = getToday();
 
-document.getElementById('appointmentForm').addEventListener('submit', function(event){
+appointmentForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  if(!this.reportValidity()) return;
+  if (!appointmentForm.reportValidity()) return;
 
-  const data = new FormData(this);
+  if (dateInput.value < getToday()) {
+    alert('Please select today or a future date.');
+    return;
+  }
+
+  const data = new FormData(appointmentForm);
+
   const message = [
     'Hello Hoor Beauty Center, I would like to request an appointment.',
     '',
@@ -154,12 +159,15 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
     'Service: ' + data.get('service'),
     'Notes: ' + (data.get('notes') || 'None'),
     '',
-    'I understand this is a request and needs confirmation.'
+    'Please contact me to confirm the appointment.'
   ].join('\n');
 
-  const whatsappURL = 'https://wa.me/966549488214?text=' + encodeURIComponent(message);
-  window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+  const url = 'https://wa.me/966549488214?text=' +
+    encodeURIComponent(message);
+
+  window.location.href = url;
 });
 </script>
+
 </body>
 </html>
