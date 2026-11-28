@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4b1838">
+<meta name="description" content="احجزي موعدك في مركز حور للتجميل والعناية بالبشرة.">
+<title>حجز موعد | مركز حور للتجميل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--wine:#4b1838;
+--berry:#762b58;
+--purple:#76518f;
+--gold:#c7a66a;
+--cream:#fbf6f2;
+--ink:#332631;
+--muted:#806f7b;
+--line:#eadfe5;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+background:linear-gradient(135deg,#fbf6f2,#f3eaf0);
+font-family:'Cairo',sans-serif;
+color:var(--ink);
+padding:28px 14px;
+}
+.site-nav{
+position:sticky;
+top:0;
+z-index:50;
+max-width:1100px;
+margin:0 auto 24px;
+padding:10px;
+background:var(--wine);
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:7px;
+flex-wrap:wrap;
+box-shadow:0 8px 22px #4b183820;
+}
+.site-nav a{
+color:#fff;
+text-decoration:none;
+padding:8px 12px;
+border-radius:9px;
+font-size:13px;
+font-weight:700;
+transition:.2s;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"]{
+background:var(--purple);
+}
+.subsection-title{
+font-size:14px;
+color:var(--berry);
+margin:4px 0 12px;
+font-weight:800;
+}
+.gender-options{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+.gender-options .option{
+flex:1;
+min-width:120px;
+}
+hr{
+border:0;
+border-top:1px solid var(--line);
+margin:24px 0;
+}
+.home-link{
+display:inline-block;
+margin-top:18px;
+color:var(--wine);
+font-size:13px;
+font-weight:700;
+text-decoration:none;
+}
+.home-link:hover{
+color:var(--purple);
+text-decoration:underline;
+}
+.wrap{max-width:850px;margin:auto}
+header{text-align:center;margin-bottom:24px}
+.logo{font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:800}
+h1{color:var(--wine);font-size:30px;margin:8px 0}
+.subtitle{color:var(--muted);font-size:14px}
+.panel{
+background:#fff;
+border:1px solid var(--line);
+border-radius:22px;
+padding:clamp(18px,4vw,34px);
+box-shadow:0 16px 45px #4b183810;
+}
+.section-title{
+color:var(--wine);
+font-size:17px;
+font-weight:800;
+margin:24px 0 14px;
+padding-bottom:9px;
+border-bottom:1px solid var(--line);
+}
+.section-title:first-child{margin-top:0}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:15px;
+}
+.field{min-width:0}
+.full{grid-column:1/-1}
+label,.field-label{
+display:block;
+font-size:13px;
+font-weight:700;
+margin-bottom:7px;
+color:#493644;
+}
+input,select,textarea{
+width:100%;
+border:1px solid #e4d8e0;
+border-radius:12px;
+padding:12px 13px;
+font:inherit;
+font-size:14px;
+color:var(--ink);
+background:#fff;
+outline:none;
+transition:.2s;
+}
+input:focus,select:focus,textarea:focus{
+border-color:var(--purple);
+box-shadow:0 0 0 3px #76518f18;
+}
+textarea{min-height:105px;resize:vertical}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.options{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+}
+.option{
+display:flex;
+align-items:center;
+gap:9px;
+padding:11px 12px;
+border:1px solid var(--line);
+border-radius:12px;
+background:#fff;
+font-size:13px;
+cursor:pointer;
+margin:0;
+transition:.2s;
+}
+.option:hover{
+border-color:var(--purple);
+background:#fbf8fc;
+}
+.option input{
+width:17px;
+height:17px;
+margin:0;
+accent-color:var(--berry);
+flex-shrink:0;
+}
+.note{
+background:#fbf6f2;
+border-right:4px solid var(--gold);
+padding:14px 16px;
+border-radius:10px;
+color:#65515f;
+font-size:13px;
+line-height:1.9;
+margin-top:22px;
+}
+.consent{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin:20px 0;
+font-size:13px;
+line-height:1.8;
+}
+.consent input{
+width:18px;
+height:18px;
+margin-top:4px;
+accent-color:var(--berry);
+flex-shrink:0;
+}
+button{
+width:100%;
+border:0;
+border-radius:14px;
+padding:15px;
+background:linear-gradient(110deg,var(--wine),var(--berry),var(--purple));
+color:white;
+font:700 16px 'Cairo',sans-serif;
+cursor:pointer;
+box-shadow:0 8px 20px #4b183826;
+transition:.2s;
+}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+footer{
+text-align:center;
+color:var(--muted);
+font-size:12px;
+margin-top:18px;
+}
+.required{color:#b13b63}
+@media(max-width:600px){
+.grid,.options{grid-template-columns:1fr}
+h1{font-size:25px}
+.panel{border-radius:17px}
+.site-nav{gap:3px;padding:8px}
+.site-nav a{font-size:11px;padding:7px 8px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- شريط التنقل الرئيسي بين صفحات الموقع -->
+<nav class="site-nav" aria-label="القائمة الرئيسية">
+<a href="index.html">الرئيسية</a>
+<a href="about.html">من نحن</a>
+<a href="videos.html">الفيديوهات</a>
+<a href="register.html" aria-current="page">حجز موعد</a>
+<a href="contact.html">تواصل معنا</a>
+<a href="index-en.html" lang="en">English</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+<div class="logo">HOOR BEAUTY CENTER</div>
+<h1>احجزي موعدك</h1>
+<div class="subtitle">
+يسعدنا اختيارك لمركز حور. املئي البيانات التالية وسيتواصل معك فريقنا لمراجعة طلبك.
+</div>
+</header>
+
+<main class="panel">
+
+<form id="bookingForm">
+
+<h2 class="section-title">المعلومات الشخصية</h2>
+<h3 class="subsection-title">بيانات صاحبة الطلب</h3>
+
+<div class="grid">
+
+<div class="field">
+<label for="fullName">الاسم الكامل <span class="required">*</span></label>
+<input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="أدخلي اسمك الكامل" required>
+</div>
+
+<div class="field">
+<label for="phone">رقم الهاتف / واتساب <span class="required">*</span></label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="مثال: 05xxxxxxxx" required>
+</div>
+
+<div class="field full">
+<label for="email">البريد الإلكتروني (اختياري)</label>
+<input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+</div>
+
+</div>
+
+<div class="field full" style="margin-top:16px">
+<span class="field-label">الجنس <span class="required">*</span></span>
+<div class="gender-options">
+<label class="option">
+<input type="radio" name="gender" value="أنثى" required>
+أنثى
+</label>
+<label class="option">
+<input type="radio" name="gender" value="ذكر" required>
+ذكر
+</label>
+</div>
+</div>
+
+<h2 class="section-title">تفاصيل الطلب</h2>
+
+<div class="grid">
+
+<div class="field">
+<label for="branch">الفرع <span class="required">*</span></label>
+<select id="branch" name="branch" required>
+<option value="">اختاري الفرع</option>
+<option value="جدة – حي الصفا">جدة – حي الصفا</option>
+<option value="بريدة – حي الخليج">بريدة – حي الخليج</option>
+</select>
+</div>
+
+<div class="field">
+<label for="requestType">نوع الطلب <span class="required">*</span></label>
+<select id="requestType" name="requestType" required>
+<option value="">اختاري نوع الطلب</option>
+<option value="حجز موعد">حجز موعد</option>
+<option value="استفسار عن خدمة">استفسار عن خدمة</option>
+<option value="الاستفسار عن الأسعار والعروض">الاستفسار عن الأسعار والعروض</option>
+<option value="طلب استشارة">طلب استشارة</option>
+<option value="طلب اتصال">طلب اتصال</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="contactMethod">طريقة التواصل المفضلة</label>
+<select id="contactMethod" name="contactMethod">
+<option value="واتساب">واتساب</option>
+<option value="اتصال هاتفي">اتصال هاتفي</option>
+<option value="البريد الإلكتروني">البريد الإلكتروني</option>
+</select>
+</div>
+
+</div>
+
+<h2 class="section-title">اختاري الخدمات المطلوبة</h2>
+<h3 class="subsection-title">يمكنك اختيار أكثر من خدمة</h3>
+
+<div class="options">
+
+<label class="option">
+<input type="checkbox" name="services" value="استشارة للبشرة">
+استشارة للبشرة
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="تنظيف البشرة">
+تنظيف البشرة
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="إبر النضارة والترطيب">
+إبر النضارة والترطيب
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="التقشير">
+التقشير
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="ديرمابن">
+ديرمابن
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="الفيلر">
+الفيلر
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="البوتوكس">
+البوتوكس
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="الليزر وإزالة الشعر">
+الليزر وإزالة الشعر
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="البيكو ليزر وعلاجات الأجهزة">
+البيكو ليزر وعلاجات الأجهزة
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="المساج اللمفاوي">
+المساج اللمفاوي
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="مساج الاسترخاء">
+مساج الاسترخاء
+</label>
+
+<label class="option">
+<input type="checkbox" name="services" value="خدمة أخرى">
+خدمة أخرى
+</label>
+
+</div>
+
+<h2 class="section-title">التاريخ والوقت المفضلان</h2>
+
+<div class="grid">
+
+<div class="field">
+<label for="date">التاريخ المفضل <span class="required">*</span></label>
+<input id="date" name="date" type="date" required>
+</div>
+
+<div class="field">
+<label for="time">الوقت المفضل <span class="required">*</span></label>
+<select id="time" name="time" required>
+<option value="">اختاري الوقت</option>
+</select>
+<div class="hint">يعمل المركز يومياً من الساعة 8:00 صباحاً حتى 11:00 مساءً.</div>
+</div>
+
+<div class="field full">
+<label for="notes">ملاحظات إضافية</label>
+<textarea id="notes" name="notes" maxlength="1000" placeholder="اكتبي أي تفاصيل أو طلبات إضافية..."></textarea>
+</div>
+
+</div>
+
+<div class="note">
+اختيار وقت ضمن ساعات دوام المركز لا يعني أنه متاح فعلياً. يتم تأكيد الموعد بعد مراجعة الطلب من قبل المركز والرد على الزبونة عبر واتساب.
+</div>
+
+<label class="consent">
+<input type="checkbox" id="consent" required>
+<span>
+أوافق على تواصل مركز حور معي بخصوص طلبي أو موعدي عبر وسيلة التواصل التي اخترتها.
+<span class="required">*</span>
+</span>
+</label>
+
+<!-- فاصل أفقي قبل زر إرسال الطلب -->
+<hr>
+<button type="submit">إرسال طلب الحجز عبر واتساب</button>
+
+</form>
+
+<div style="text-align:center">
+<a class="home-link" href="index.html">العودة إلى الصفحة الرئيسية</a>
+</div>
+
+</main>
+
+<footer>
+HOOR BEAUTY CENTER · جدة – حي الصفا | بريدة – حي الخليج
+</footer>
+
+</div>
+
+<script>
+const form=document.getElementById('bookingForm');
+const dateInput=document.getElementById('date');
+const timeSelect=document.getElementById('time');
+
+const today=new Date();
+const localToday=new Date(
+today.getTime()-today.getTimezoneOffset()*60000
+).toISOString().split('T')[0];
+
+dateInput.min=localToday;
+
+// مواعيد الاختيار: كل نصف ساعة من 8 صباحاً إلى 10:30 مساءً
+for(let minutes=8*60;minutes<=22*60+30;minutes+=30){
+
+const hour=Math.floor(minutes/60);
+const minute=minutes%60;
+
+const value=
+String(hour).padStart(2,'0')+':'+
+String(minute).padStart(2,'0');
+
+const displayHour=hour%12||12;
+const period=hour<12?'صباحاً':'مساءً';
+
+const label=
+displayHour+':'+
+String(minute).padStart(2,'0')+' '+
+period;
+
+timeSelect.add(new Option(label,value));
+}
+
+form.addEventListener('submit',function(event){
+
+event.preventDefault();
+
+if(!form.reportValidity())return;
+
+if(dateInput.value<localToday){
+alert('يرجى اختيار تاريخ اليوم أو تاريخ لاحق.');
+return;
+}
+
+const data=new FormData(form);
+const services=data.getAll('services');
+
+const message=[
+'طلب جديد من موقع مركز حور للتجميل',
+'',
+'الاسم الكامل: '+data.get('fullName'),
+'رقم الهاتف: '+data.get('phone'),
+'البريد الإلكتروني: '+(data.get('email')||'غير مذكور'),
+'الجنس: '+data.get('gender'),
+'الفرع: '+data.get('branch'),
+'نوع الطلب: '+data.get('requestType'),
+'الخدمات المطلوبة: '+(services.length?services.join('، '):'لم يتم تحديد خدمة'),
+'التاريخ المفضل: '+data.get('date'),
+'الوقت المفضل: '+timeSelect.options[timeSelect.selectedIndex].text,
+'طريقة التواصل المفضلة: '+data.get('contactMethod'),
+'الملاحظات: '+(data.get('notes')||'لا توجد'),
+'الموافقة على التواصل: نعم',
+'',
+'يرجى مراجعة الطلب والتواصل مع الزبونة لتأكيد الموعد.'
+].join('\n');
+
+window.location.href=
+'https://wa.me/966549488214?text='+
+encodeURIComponent(message);
+
+});
+</script>
+
+</body>
+</html>
