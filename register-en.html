@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4b1838">
+<meta name="description" content="Book your appointment at Hoor Beauty Center.">
+<title>Book an Appointment | Hoor Beauty Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--wine:#4b1838;--berry:#762b58;--purple:#76518f;--gold:#c7a66a;--cream:#fbf6f2;--ink:#332631;--muted:#806f7b;--line:#eadfe5}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,#fbf6f2,#f3eaf0);font-family:'Cairo',sans-serif;color:var(--ink);padding:28px 14px}
+.site-nav{position:sticky;top:0;z-index:50;max-width:1100px;margin:0 auto 24px;padding:10px;background:var(--wine);border-radius:14px;display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;box-shadow:0 8px 22px #4b183820}
+.site-nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:9px;font-size:13px;font-weight:700;transition:.2s}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--purple)}
+.subsection-title{font-size:14px;color:var(--berry);margin:4px 0 12px;font-weight:800}
+.gender-options{display:flex;gap:12px;flex-wrap:wrap}
+.gender-options .option{flex:1;min-width:120px}
+hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.home-link{display:inline-block;margin-top:18px;color:var(--wine);font-size:13px;font-weight:700;text-decoration:none}
+.home-link:hover{color:var(--purple);text-decoration:underline}
+.wrap{max-width:850px;margin:auto}
+header{text-align:center;margin-bottom:24px}
+.logo{font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:800}
+h1{color:var(--wine);font-size:30px;margin:8px 0}
+.subtitle{color:var(--muted);font-size:14px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,34px);box-shadow:0 16px 45px #4b183810}
+.section-title{color:var(--wine);font-size:17px;font-weight:800;margin:24px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.section-title:first-child{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.field{min-width:0}
+.full{grid-column:1/-1}
+label,.field-label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:#493644}
+input,select,textarea{width:100%;border:1px solid #e4d8e0;border-radius:12px;padding:12px 13px;font:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #76518f18}
+textarea{min-height:105px;resize:vertical}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.option{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:13px;cursor:pointer;margin:0;transition:.2s}
+.option:hover{border-color:var(--purple);background:#fbf8fc}
+.option input{width:17px;height:17px;margin:0;accent-color:var(--berry);flex-shrink:0}
+.note{background:#fbf6f2;border-left:4px solid var(--gold);padding:14px 16px;border-radius:10px;color:#65515f;font-size:13px;line-height:1.9;margin-top:22px}
+.consent{display:flex;align-items:flex-start;gap:10px;margin:20px 0;font-size:13px;line-height:1.8}
+.consent input{width:18px;height:18px;margin-top:4px;accent-color:var(--berry);flex-shrink:0}
+button{width:100%;border:0;border-radius:14px;padding:15px;background:linear-gradient(110deg,var(--wine),var(--berry),var(--purple));color:white;font:700 16px 'Cairo',sans-serif;cursor:pointer;box-shadow:0 8px 20px #4b183826;transition:.2s}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+.required{color:#b13b63}
+@media(max-width:600px){.grid,.options{grid-template-columns:1fr}h1{font-size:25px}.panel{border-radius:17px}.site-nav{gap:3px;padding:8px}.site-nav a{font-size:11px;padding:7px 8px}}
+</style>
+</head>
+
+<body>
+
+<!-- Main navigation menu -->
+<nav class="site-nav" aria-label="Main navigation">
+<a href="index-en.html">Home</a>
+<a href="about-en.html">About Us</a>
+<a href="videos-en.html">Videos</a>
+<a href="register-en.html" aria-current="page">Book an Appointment</a>
+<a href="contact-en.html">Contact</a>
+<a href="index.html" lang="ar">العربية</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+<div class="logo">HOOR BEAUTY CENTER</div>
+<h1>Book Your Appointment</h1>
+<div class="subtitle">Thank you for choosing Hoor Beauty Center. Complete the form and our team will contact you to review your request.</div>
+</header>
+
+<main class="panel">
+
+<form id="bookingForm">
+
+<h2 class="section-title">Personal Information</h2>
+<h3 class="subsection-title">Your Personal Details</h3>
+
+<div class="grid">
+
+<div class="field">
+<label for="fullName">Full Name <span class="required">*</span></label>
+<input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Enter your full name" required>
+</div>
+
+<div class="field">
+<label for="phone">Phone / WhatsApp Number <span class="required">*</span></label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 05xxxxxxxx" required>
+</div>
+
+<div class="field full">
+<label for="email">Email Address (Optional)</label>
+<input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+</div>
+
+</div>
+
+<div class="field full" style="margin-top:16px">
+<span class="field-label">Gender <span class="required">*</span></span>
+<div class="gender-options">
+<label class="option"><input type="radio" name="gender" value="Female" required> Female</label>
+<label class="option"><input type="radio" name="gender" value="Male" required> Male</label>
+</div>
+</div>
+
+<h2 class="section-title">Request Details</h2>
+
+<div class="grid">
+
+<div class="field">
+<label for="branch">Branch <span class="required">*</span></label>
+<select id="branch" name="branch" required>
+<option value="">Select a branch</option>
+<option value="Jeddah – Al Safa District">Jeddah – Al Safa District</option>
+<option value="Buraidah – Al Khaleej District">Buraidah – Al Khaleej District</option>
+</select>
+</div>
+
+<div class="field">
+<label for="requestType">Request Type <span class="required">*</span></label>
+<select id="requestType" name="requestType" required>
+<option value="">Select request type</option>
+<option value="Appointment Booking">Appointment Booking</option>
+<option value="Service Inquiry">Service Inquiry</option>
+<option value="Prices and Offers Inquiry">Prices and Offers Inquiry</option>
+<option value="Consultation Request">Consultation Request</option>
+<option value="Request a Call">Request a Call</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="contactMethod">Preferred Contact Method</label>
+<select id="contactMethod" name="contactMethod">
+<option value="WhatsApp">WhatsApp</option>
+<option value="Phone Call">Phone Call</option>
+<option value="Email">Email</option>
+</select>
+</div>
+
+</div>
+
+<h2 class="section-title">Select Your Services</h2>
+<h3 class="subsection-title">You can select more than one service</h3>
+
+<div class="options">
+<label class="option"><input type="checkbox" name="services" value="Skin Consultation">Skin Consultation</label>
+<label class="option"><input type="checkbox" name="services" value="Skin Cleansing">Skin Cleansing</label>
+<label class="option"><input type="checkbox" name="services" value="Skin Boosters and Hydration">Skin Boosters and Hydration</label>
+<label class="option"><input type="checkbox" name="services" value="Peeling">Peeling</label>
+<label class="option"><input type="checkbox" name="services" value="Dermapen">Dermapen</label>
+<label class="option"><input type="checkbox" name="services" value="Fillers">Fillers</label>
+<label class="option"><input type="checkbox" name="services" value="Botox">Botox</label>
+<label class="option"><input type="checkbox" name="services" value="Laser and Hair Removal">Laser and Hair Removal</label>
+<label class="option"><input type="checkbox" name="services" value="Pico Laser and Device Treatments">Pico Laser and Device Treatments</label>
+<label class="option"><input type="checkbox" name="services" value="Lymphatic Massage">Lymphatic Massage</label>
+<label class="option"><input type="checkbox" name="services" value="Relaxation Massage">Relaxation Massage</label>
+<label class="option"><input type="checkbox" name="services" value="Other Service">Other Service</label>
+</div>
+
+<h2 class="section-title">Preferred Date and Time</h2>
+
+<div class="grid">
+
+<div class="field">
+<label for="date">Preferred Date <span class="required">*</span></label>
+<input id="date" name="date" type="date" required>
+</div>
+
+<div class="field">
+<label for="time">Preferred Time <span class="required">*</span></label>
+<select id="time" name="time" required>
+<option value="">Select a time</option>
+</select>
+<div class="hint">Open daily from 8:00 AM to 11:00 PM.</div>
+</div>
+
+<div class="field full">
+<label for="notes">Additional Notes</label>
+<textarea id="notes" name="notes" maxlength="1000" placeholder="Write any additional details or requests..."></textarea>
+</div>
+
+</div>
+
+<div class="note">
+Selecting a time within the center's working hours does not guarantee availability. Appointments are confirmed after the center reviews the request and responds to the customer via WhatsApp.
+</div>
+
+<label class="consent">
+<input type="checkbox" id="consent" required>
+<span>I agree to be contacted by Hoor Beauty Center regarding my request or appointment through my preferred contact method. <span class="required">*</span></span>
+</label>
+
+<!-- Divider before the form submission button -->
+<hr>
+<button type="submit">Send Booking Request via WhatsApp</button>
+
+</form>
+
+<div style="text-align:center">
+<a class="home-link" href="index-en.html">Back to Home</a>
+</div>
+
+</main>
+
+<footer>HOOR BEAUTY CENTER · Jeddah – Al Safa | Buraidah – Al Khaleej</footer>
+
+</div>
+
+<script>
+const form=document.getElementById('bookingForm');
+const dateInput=document.getElementById('date');
+const timeSelect=document.getElementById('time');
+
+const today=new Date();
+const localToday=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().split('T')[0];
+dateInput.min=localToday;
+
+// Generate appointment times every 30 minutes from 8:00 AM to 10:30 PM
+for(let minutes=8*60;minutes<=22*60+30;minutes+=30){
+ const hour=Math.floor(minutes/60);
+ const minute=minutes%60;
+ const value=String(hour).padStart(2,'0')+':'+String(minute).padStart(2,'0');
+ const displayHour=hour%12||12;
+ const period=hour<12?'AM':'PM';
+ const label=displayHour+':'+String(minute).padStart(2,'0')+' '+period;
+ timeSelect.add(new Option(label,value));
+}
+
+form.addEventListener('submit',function(event){
+ event.preventDefault();
+
+ if(!form.reportValidity())return;
+
+ if(dateInput.value<localToday){
+  alert('Please select today or a future date.');
+  return;
+ }
+
+ const data=new FormData(form);
+ const services=data.getAll('services');
+
+ const message=[
+ 'New Booking Request – Hoor Beauty Center',
+ '',
+ 'Full Name: '+data.get('fullName'),
+ 'Phone: '+data.get('phone'),
+ 'Email: '+(data.get('email')||'Not provided'),
+ 'Gender: '+data.get('gender'),
+ 'Branch: '+data.get('branch'),
+ 'Request Type: '+data.get('requestType'),
+ 'Requested Services: '+(services.length?services.join(', '):'No service selected'),
+ 'Preferred Date: '+data.get('date'),
+ 'Preferred Time: '+timeSelect.options[timeSelect.selectedIndex].text,
+ 'Preferred Contact Method: '+data.get('contactMethod'),
+ 'Notes: '+(data.get('notes')||'None'),
+ 'Contact Consent: Yes',
+ '',
+ 'Please review this request and contact the customer to confirm the appointment.'
+ ].join('\n');
+
+ window.location.href='https://wa.me/966549488214?text='+encodeURIComponent(message);
+});
+</script>
+
+</body>
+</html>
