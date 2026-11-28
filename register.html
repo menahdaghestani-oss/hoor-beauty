@@ -460,27 +460,66 @@ footer a { color:#f5dfb5; }
   <p><a href="contact.html">تواصلي معنا</a></p>
 </footer>
 
+
 <script>
 const bookingForm = document.getElementById('booking-form');
-const formMessage = document.getElementById('form-message');
+const dateInput = document.getElementById('appointment_date');
+
+function getToday() {
+  const now = new Date();
+  const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+  return local.toISOString().split('T')[0];
+}
+
+dateInput.min = getToday();
 
 bookingForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  if (!bookingForm.checkValidity()) {
-    bookingForm.reportValidity();
+  if (!bookingForm.reportValidity()) return;
+
+  if (dateInput.value < getToday()) {
+    alert('يرجى اختيار تاريخ اليوم أو تاريخ لاحق.');
     return;
   }
 
-  formMessage.style.display = 'block';
-  formMessage.scrollIntoView({
-    behavior: 'smooth',
-    block: 'center'
-  });
-});
+  const data = new FormData(bookingForm);
 
-bookingForm.addEventListener('reset', function() {
-  formMessage.style.display = 'none';
+  const branches = {
+    jeddah: 'جدة - حي الصفا',
+    buraydah: 'بريدة - حي الخليج',
+    other: 'فرع آخر / استفسار'
+  };
+
+  const services = {
+    'skin-care': 'تنظيف وعناية بالبشرة',
+    laser: 'جلسات الليزر',
+    relaxation: 'المساج والاسترخاء'
+  };
+
+  const selectedServices = data.getAll('services')
+    .map(item => services[item] || item);
+
+  const message = [
+    'مرحباً مركز حور، أرغب بطلب حجز موعد.',
+    '',
+    'الاسم: ' + data.get('client_name'),
+    'الهاتف: ' + data.get('client_phone'),
+    'البريد الإلكتروني: ' + data.get('client_email'),
+    'الجنس: ' + (data.get('gender') === 'female' ? 'أنثى' : 'ذكر'),
+    'الخدمات: ' + (selectedServices.join('، ') || 'لم يتم التحديد'),
+    'الفرع: ' + (branches[data.get('branch')] || data.get('branch')),
+    'التاريخ: ' + data.get('appointment_date'),
+    'الوقت: ' + data.get('appointment_time'),
+    'ملاحظات: ' + (data.get('notes') || 'لا يوجد'),
+    '',
+    'يرجى التواصل معي لتأكيد الموعد.'
+  ].join('\n');
+
+  const url = 'https://wa.me/966549488214?text=' +
+    encodeURIComponent(message);
+
+  window.location.href = url;
 });
 </script>
 
